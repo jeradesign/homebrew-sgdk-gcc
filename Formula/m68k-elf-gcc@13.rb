@@ -11,6 +11,13 @@ class M68kElfGccAT13 < Formula
     regex(%r{href=["']?gcc[._-]v?(13(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/jeradesign/homebrew-sgdk-gcc/releases/download/m68k-elf-gcc@13-13.4.0"
+    rebuild 1
+    sha256 arm64_tahoe:  "03f6f252c5c562a55bb9d4b9a0c57b87a7acb5a8929ba83dc3d5d8cc1082f9e3"
+    sha256 x86_64_linux: "ff1f1c042d305c51046fa63429be104c95bd5e26a1a582dd70156b6e87598348"
+  end
+
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
