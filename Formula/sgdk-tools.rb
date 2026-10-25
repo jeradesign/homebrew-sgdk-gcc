@@ -22,12 +22,11 @@ class SgdkTools < Formula
   depends_on "isl"
   depends_on "libmpc"
   depends_on "m68k-elf-binutils"
+  depends_on :macos
   depends_on "mpfr"
   depends_on "zstd"
 
-  on_linux do
-    depends_on "zlib-ng-compat"
-  end
+  uses_from_macos "zlib"
 
   # GCC 16 miscompiles SGDK's Z80_upload (no sound), so this provides GCC 13
   # under the plain m68k-elf-gcc name instead
