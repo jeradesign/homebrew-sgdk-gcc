@@ -17,6 +17,11 @@ class SgdkTools < Formula
     regex(%r{href=["']?gcc[._-]v?(13(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://github.com/jeradesign/homebrew-sgdk-tools/releases/download/sgdk-tools-13.4.0"
+    sha256 arm64_tahoe: "7ad0834a1d12fcfaa7ac6888b8e7ee574d5ee212b7d3dd190048e1bc8b958324"
+  end
+
   depends_on "cmake" => :build
   depends_on "gmp"
   depends_on "isl"
