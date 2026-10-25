@@ -9,6 +9,8 @@ class SgdkTools < Formula
     "MIT",
     "Zlib",
   ]
+  # versions were SGDK commit dates (20261001) before GCC was merged in
+  version_scheme 1
 
   livecheck do
     url "https://ftpmirror.gnu.org/gcc/"
