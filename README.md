@@ -27,3 +27,24 @@ make -f makelib.gen clean && make -f makelib.gen
 ```
 
 Then build projects as usual with `make -f $SGDK/makefile.gen`.
+
+## sgdk-tools
+
+Native builds of the SGDK command-line tools that SGDK only ships as Windows `.exe` files, built from SGDK's own `tools/` sources:
+
+| Tool | Needed for |
+|---|---|
+| `sjasm` | Z80 assembler: builds the sound drivers in `libmd.a`, and any project `.s80` files |
+| `bintos` | Converts the assembled Z80 binaries into 68000 source to link in |
+| `xgmtool` | Converts XGM/VGM music in `XGM` resources (called by `rescomp`) |
+
+### Install
+
+```sh
+brew install jeradesign/sgdk-gcc/sgdk-tools
+ln -sf "$(brew --prefix)/bin/xgmtool" "$SGDK/bin/xgmtool"
+```
+
+`sjasm` and `bintos` are found on PATH. `rescomp` only looks for `xgmtool` next to `rescomp.jar`, which is why the second line links it into your SGDK checkout.
+
+The formula is pinned to a specific SGDK commit, so update it by hand when the tools change upstream.
